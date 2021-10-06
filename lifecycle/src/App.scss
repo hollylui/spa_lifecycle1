@@ -1,0 +1,105 @@
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+.userSearch {
+  width: 1000px;
+  background-color: rgb(196, 255, 255);
+  padding-bottom: 20px;
+  margin: 20px;
+  border: 1px solid black;
+
+  // Header.js ----------------------------
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    height: 120px;
+    justify-content: space-around;
+    align-items: stretch;
+    border-bottom: 1px solid black;
+
+    h1 {
+      margin: 0;
+      font-size: 40px;
+      padding-left: 15px;
+    }
+
+    nav {
+      align-self: flex-end;
+      padding-right: 10px;
+      span {
+        margin: 0;
+        font-size: 30px;
+        padding-left: 15px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  // Form -----------------------------------------
+  form {
+    margin-bottom: 10px;
+
+    .inputText {
+      width: 250px;
+      height: 30px;
+      text-indent: 10px;
+    }
+
+    .searchBtn {
+      border: none;
+      background-color: aquamarine;
+      margin-left: 10px;
+      width: 100px;
+      height: 35px;
+      cursor: pointer;
+    }
+  }
+
+  //SearchReasults.js ----------------------------------
+
+  table {
+    width: 80%;
+    text-align: left;
+    background-color: white;
+
+    td,
+    th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    th {
+      background-color: skyblue;
+    }
+
+    tr:nth-child(even) {
+      background-color: lightgrey;
+    }
+  }
+
+  table,
+  .inputText {
+    margin: 10px 15px;
+  }
+}
+
+// About.js
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 400px;
+  font-size: 20px;
+
+  p {
+    width: 350px;
+    line-height: 35px;
+    text-align: justify;
+  }
+}

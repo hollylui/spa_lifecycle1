@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import User from "./User";
 
-const SearchResults = ({ searchFor }) => {
+const SearchResults = ({ searchTerm, searchFor }) => {
   // fetch url -----------------------------------------------
   const url = "https://jsonplaceholder.typicode.com/users";
 
@@ -17,7 +17,9 @@ const SearchResults = ({ searchFor }) => {
 
   const searchNameOrEmail = () => {
     const searchUser = users.filter(
-      (user) => user.name.includes(searchFor) || user.email.includes(searchFor)
+      (user) =>
+        user.name.toLowerCase().includes(searchFor.toLowerCase()) ||
+        user.email.toLowerCase().includes(searchFor.toLowerCase())
     );
     setUsers(searchUser);
   };
@@ -27,6 +29,10 @@ const SearchResults = ({ searchFor }) => {
     userData();
     console.log(`The SearchResult-component has mounted.`);
   }, []);
+
+  useEffect(() => {
+    userData();
+  }, [searchTerm]);
 
   useEffect(() => {
     searchNameOrEmail();

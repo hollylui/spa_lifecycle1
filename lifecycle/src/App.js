@@ -5,17 +5,21 @@ import SearchResults from "./components/SearchResults";
 import About from "./components/About";
 
 function App() {
+  // state hook ---------------------------------------
+
   const [searchTerm, setSearchTerm] = useState("");
   const [lastSearchTerm, setLastSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState("search");
 
+  // function ----------------------------------------
   const searchBox = (event) => {
-    setSearchTerm(event.target.value);
+    setSearchTerm(event.target.value.substr(0, 20));
   };
 
   const searchBtn = (e) => {
     e.preventDefault();
     setLastSearchTerm(searchTerm);
+    e.target.previousElementSibling.value = "";
   };
 
   const navigate = (e) => {
@@ -24,6 +28,7 @@ function App() {
       : setCurrentPage("about");
   };
 
+  // rendering -----------------------------------------
   return (
     <div className="userSearch">
       <Header navigationHandler={navigate} />
@@ -37,7 +42,7 @@ function App() {
         />
       </form>
       {currentPage === "search" ? (
-        <SearchResults searchFor={lastSearchTerm} />
+        <SearchResults searchFor={lastSearchTerm} searchTerm={searchTerm} />
       ) : (
         <About />
       )}

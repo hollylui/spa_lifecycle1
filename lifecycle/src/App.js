@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import "./App.scss";
 import Header from "./components/Header";
+import Form from "./components/Form";
 import SearchResults from "./components/SearchResults";
 import About from "./components/About";
+import "./App.scss";
 
 function App() {
   // state hook ---------------------------------------
@@ -32,17 +33,12 @@ function App() {
   return (
     <div className="userSearch">
       <Header navigationHandler={navigate} />
-      <form>
-        <input className="inputText" type="text" onChange={searchBox} />
-        <input
-          className="searchBtn"
-          type="submit"
-          value="Search"
-          onClick={searchBtn}
-        />
-      </form>
+      <Form searchBtn={searchBtn} searchBox={searchBox} />
       {currentPage === "search" ? (
-        <SearchResults searchFor={lastSearchTerm} searchTerm={searchTerm} />
+        <SearchResults
+          searchFor={lastSearchTerm.toLowerCase()}
+          searchTerm={searchTerm}
+        />
       ) : (
         <About />
       )}

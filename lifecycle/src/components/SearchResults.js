@@ -18,8 +18,9 @@ const SearchResults = ({ searchTerm, searchFor }) => {
   const searchNameOrEmail = () => {
     const searchUser = users.filter(
       (user) =>
-        user.name.toLowerCase().includes(searchFor.toLowerCase()) ||
-        user.email.toLowerCase().includes(searchFor.toLowerCase())
+        user.name.toLowerCase().includes(searchFor) ||
+        user.email.toLowerCase().includes(searchFor) ||
+        user.id.toString().includes(searchFor)
     );
     setUsers(searchUser);
   };

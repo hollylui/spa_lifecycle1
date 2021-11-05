@@ -2,14 +2,16 @@ body,
 html {
   padding: 0;
   margin: 0;
+  font-family: "Lato", sans-serif;
 }
 
 .userSearch {
   width: 1000px;
-  background-color: rgb(196, 255, 255);
+  background-color: hsl(157, 72%, 42%);
   padding-bottom: 20px;
   margin: 20px;
-  border: 1px solid black;
+  border: 5px solid black;
+  border-radius: 10px;
 
   // Header.js ----------------------------
 
@@ -19,7 +21,7 @@ html {
     height: 120px;
     justify-content: space-around;
     align-items: stretch;
-    border-bottom: 1px solid black;
+    border-bottom: 5px solid black;
 
     h1 {
       margin: 0;
@@ -41,26 +43,29 @@ html {
 
   // Form -----------------------------------------
   form {
-    margin-bottom: 10px;
+    margin: 10px 0;
 
     .inputText {
       width: 250px;
       height: 30px;
-      text-indent: 10px;
+      text-indent: 5px;
+      border: none;
+      border-radius: 5px;
     }
 
     .searchBtn {
       border: none;
-      background-color: aquamarine;
+      background-color: hsl(182, 84%, 48%);
       margin-left: 10px;
       width: 100px;
       height: 35px;
       cursor: pointer;
+      border-radius: 5px;
     }
 
     .inputText,
     .searchBtn {
-      font-size: 16px;
+      font-size: 20px;
     }
   }
 
@@ -70,20 +75,22 @@ html {
     width: 80%;
     text-align: left;
     background-color: white;
-
+    border-spacing: 0;
+    font-size: 20px;
     td,
     th {
-      border: 1px solid #dddddd;
+      border: 1px solid #ffffff;
       text-align: left;
       padding: 8px;
     }
 
     th {
-      background-color: skyblue;
+      background-color: hsl(182, 100%, 24%);
+      color: white;
     }
 
     tr:nth-child(even) {
-      background-color: lightgrey;
+      background-color: hsl(160, 100%, 85%);
     }
   }
 
